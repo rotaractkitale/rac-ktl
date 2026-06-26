@@ -1,0 +1,178 @@
+/* ================================
+   Rotaract Club of Kitale Website
+   Multi-page static HTML/CSS/JS
+   Colors inspired by Rotary branding
+================================ */
+
+:root {
+    --rotary-blue: #17458F;
+    --rotary-gold: #F7A81B;
+    --rotary-azure: #0067C8;
+    --rotaract-cranberry: #D41367;
+    --sky-blue: #00A2E0;
+    --charcoal: #343A40;
+    --gray: #6C757D;
+    --light: #F6F8FB;
+    --white: #FFFFFF;
+    --dark-blue: #0E2E63;
+    --green: #1F7A43;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--charcoal);
+    background: var(--white);
+    line-height: 1.65;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.topbar {
+    background: var(--rotary-blue);
+    color: var(--white);
+    padding: 0.55rem 5%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--white);
+    box-shadow: 0 2px 24px rgba(0, 0, 0, 0.08);
+}
+
+nav {
+    width: min(1180px, 90%);
+    margin: auto;
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--rotary-blue);
+    font-weight: 900;
+}
+
+.logo-mark {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--rotary-gold);
+    border: 4px solid var(--rotary-blue);
+    color: var(--rotary-blue);
+    font-weight: 900;
+}
+
+.logo small {
+    display: block;
+    font-size: 0.76rem;
+    color: var(--gray);
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.05rem;
+    font-weight: 800;
+    font-size: 0.94rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--rotaract-cranberry);
+}
+
+.menu-toggle {
+    display: none;
+    background: var(--rotary-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 12px;
+    padding: 0.5rem 0.75rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.container {
+    width: min(1180px, 90%);
+    margin: auto;
+}
+
+section {
+    padding: 5rem 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.85rem 1.25rem;
+    border-radius: 999px;
+    font-weight: 900;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+}
+
+.btn-gold {
+    background: var(--rotary-gold);
+    color: #1f2933;
+}
+
+.btn-blue {
+    background: var(--rotary-blue);
+    color: var(--white);
+}
+
+.btn-cranberry {
+    background: var(--rotaract-cranberry);
+    color: var(--white);
+}
+
+.btn-outline {
+    border: 2px solid currentColor;
+    color: var(--rotary-blue);
+    background: transparent;
+}
+
+.btn-white-outline {
+    border: 2px solid var(--white);
+    color: var(--white);
+}
+
+/* (rest of styles omitted for brevity) */

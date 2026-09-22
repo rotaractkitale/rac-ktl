@@ -47,3 +47,41 @@ dots.forEach((dot, index) => {
 if (slides.length) {
     setInterval(() => showSlide(currentSlide + 1), 5000);
 }
+
+const galleryImages = document.querySelectorAll(".gallery-card img");
+
+if (galleryImages.length) {
+    const lightbox = document.createElement("div");
+    lightbox.className = "lightbox";
+    lightbox.hidden = true;
+    lightbox.setAttribute("role", "dialog");
+    lightbox.setAttribute("aria-modal", "true");
+    lightbox.innerHTML = `
+        <button class="lightbox-close" type="button" aria-label="Close image">&times;</button>
+        <img class="lightbox-image" alt="">
+    `;
+    document.body.appendChild(lightbox);
+
+    const lightboxImage = lightbox.querySelector(".lightbox-image");
+    const closeLightbox = () => {
+        lightbox.hidden = true;
+        document.body.style.overflow = "";
+    };
+
+    galleryImages.forEach((image) => {
+        image.addEventListener("click", () => {
+            lightboxImage.src = image.src;
+            lightboxImage.alt = image.alt;
+            lightbox.hidden = false;
+            document.body.style.overflow = "hidden";
+        });
+    });
+
+    lightbox.querySelector(".lightbox-close").addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) closeLightbox();
+    });
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !lightbox.hidden) closeLightbox();
+    });
+}
